@@ -27,11 +27,12 @@ public class UserRepository {
     
     public void deleteById(Long id){
         System.out.println(String.format("DELETE/id - Recebendo o id: %d para excluir um usuário", id));
-        System.out.println(id);
+        System.out.println(this.usuarios.get(id));
         this.usuarios.remove(id);
     }
     
     public List<User> findAll(){
+        System.out.println("GET - Localizando todos os usuários no repositório");
         List<User> listaUsuarios = this.usuarios.values()
         		.stream()
         		.toList();
